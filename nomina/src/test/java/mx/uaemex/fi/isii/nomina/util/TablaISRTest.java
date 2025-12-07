@@ -15,7 +15,7 @@ class TablaISRTest {
         tablaISR = TablaISR.getTabla();
     }
 
-    // ========== PRUEBAS POSITIVAS - VALORES EN LÍMITE INFERIOR ==========
+    // ========== PRUEBAS POSITIVAS - VALORES EN LIMITE INFERIOR ==========
 
     @Test
     @DisplayName("UT-TISR-001: Buscar rango con nómina en límite inferior del Rango 1 (0.0)")
@@ -62,7 +62,7 @@ class TablaISRTest {
         assertEquals(isrEsperado, resultado.getIsr(), 0.01);
     }
 
-    // ========== PRUEBAS POSITIVAS - VALORES EN LÍMITE SUPERIOR ==========
+    // ========== PRUEBAS POSITIVAS - VALORES EN LIMITE SUPERIOR ==========
 
     @Test
     @DisplayName("UT-TISR-004: Buscar rango con nómina en límite superior del Rango 1 (8364.0)")

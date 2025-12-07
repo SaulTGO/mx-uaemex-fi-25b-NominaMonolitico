@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 /**
  * Class for cookie's basic management
- * @see package controller
  */
 @Component
 public class CookieManager {

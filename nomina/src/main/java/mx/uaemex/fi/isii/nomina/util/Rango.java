@@ -2,7 +2,7 @@ package mx.uaemex.fi.isii.nomina.util;
 
 /**
  * For setting and describing useful range attributes, lower Boundary, upper boundary and it's isr
- * @see TablaISR
+ * @see mx.uaemex.fi.isii.nomina.util.TablaISR
  */
 public class Rango {
 
