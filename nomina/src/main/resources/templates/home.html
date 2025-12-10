@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Nómina</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<div class="background-decoration">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+</div>
+
+<div class="container">
+    <div class="header">
+        <div class="icon">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="28" stroke="#3b558b" stroke-width="3"/>
+                <path d="M20 35L27 42L40 25" stroke="#3b558b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <h1>Sistema de Gestión de Nómina</h1>
+    </div>
+
+    <div class="button-container">
+        <a class="main-button register-btn" th:href="@{/register}">
+            <div class="button-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="20" y1="8" x2="20" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="23" y1="11" x2="17" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="button-content">
+                <span class="button-title">Registrar</span>
+                <span class="button-description">Añadir registro</span>
+            </div>
+        </a>
+
+        <a class="main-button calculate-btn" th:href="@{/calcular-nomina}">
+            <div class="button-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <line x1="8" y1="6" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="8" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="8" y1="14" x2="12" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="16" cy="17" r="3" stroke="currentColor" stroke-width="2"/>
+                    <line x1="16" y1="15.5" x2="16" y2="18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="button-content">
+                <span class="button-title">Calcular Nómina</span>
+                <span class="button-description">Procesar pagos y deducciones</span>
+            </div>
+        </a>
+
+        <a class="main-button logout-btn" th:href="@{/logout}">
+            <div class="button-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="button-content">
+                <span class="button-title">Cerrar Sesión</span>
+                <span class="button-description">Salir del sistema</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Sistema de Nómina. Todos los derechos reservados.</p>
+    </div>
+</div>
+</body>
+</html>

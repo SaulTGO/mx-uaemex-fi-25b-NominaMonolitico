@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página no encontrada</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.ico}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .background-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .circle1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+
+        .circle2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            right: -50px;
+            animation-delay: 7s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-60px) translateX(-20px);
+            }
+        }
+
+        .error-container {
+            position: relative;
+            z-index: 1;
+            background: white;
+            border-radius: 30px;
+            padding: 60px 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-icon {
+            margin-bottom: 30px;
+            animation: shake 1s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        .error-code {
+            font-size: 120px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #3b558b 0%, #5a7cb8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .error-title {
+            color: #3b558b;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .error-message {
+            color: #6b7c93;
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b558b 0%, #5a7cb8 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 85, 139, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #3b558b;
+            border: 2px solid #3b558b;
+        }
+
+        .btn-secondary:hover {
+            background: #3b558b;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover svg {
+            transform: translateX(5px);
+        }
+
+        .suggestions {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .suggestions h3 {
+            color: #3b558b;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .suggestions ul {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .suggestions li {
+            color: #6b7c93;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .suggestions li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #5a7cb8;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .error-container {
+                padding: 40px 30px;
+            }
+
+            .error-code {
+                font-size: 80px;
+            }
+
+            .error-title {
+                font-size: 24px;
+            }
+
+            .error-message {
+                font-size: 16px;
+            }
+
+            .button-container {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="background-decoration">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+</div>
+
+<div class="error-container">
+    <div class="error-icon">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="45" stroke="#3b558b" stroke-width="4"/>
+            <path d="M35 65L50 50L65 35" stroke="#3b558b" stroke-width="4" stroke-linecap="round"/>
+            <path d="M65 65L50 50L35 35" stroke="#3b558b" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <div class="error-code" th:text="${errorCode} ?: '404'">404</div>
+    <h1 class="error-title" th:text="${errorTitle} ?: 'Página no encontrada'">Página no encontrada</h1>
+    <p class="error-message" th:text="${errorMessage} ?: 'Lo sentimos, la página que buscas no existe o ha sido movida.'">
+        Lo sentimos, la página que buscas no existe o ha sido movida.
+    </p>
+
+    <div class="button-container">
+        <a class="btn btn-primary" th:href="@{/home}">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2"/>
+                <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            Volver al inicio
+        </a>
+        <a class="btn btn-secondary" href="javascript:history.back()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Página anterior
+        </a>
+    </div>
+</div>
+</body>
+</html>
